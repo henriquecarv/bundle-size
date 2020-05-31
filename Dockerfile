@@ -15,6 +15,7 @@ COPY ./tsconfig*.json ./
 COPY ./.babelrc ./.babelrc
 COPY ./*.d.ts ./
 COPY server ./server/
+COPY helpers ./helpers/
 COPY pages ./pages/
 COPY public ./public/
 

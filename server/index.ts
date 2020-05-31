@@ -19,9 +19,9 @@ const isProduction = nodeEnv === 'production'
 
 if (!isProduction) {
   app.use(logger())
+} else {
+  app.use(connect(compression()))
 }
-
-app.use(connect(compression()))
 
 // Next JS requirement
 app.use(defaultReturn())
