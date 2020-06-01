@@ -1,5 +1,5 @@
 import Router from 'koa-router'
-import handleRoutes from '../middlewares/Next/handleRoutes'
+import { handleRoutes } from 'nextjs-koa-middleware'
 
 const nextRouter = new Router()
 

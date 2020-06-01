@@ -12,7 +12,7 @@ COPY yarn.lock ./
 RUN yarn install --frozen-lockfile
 
 COPY ./tsconfig*.json ./
-COPY ./.babelrc ./.babelrc
+COPY ./.babelrc ./
 COPY ./*.d.ts ./
 COPY server ./server/
 COPY helpers ./helpers/

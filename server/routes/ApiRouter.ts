@@ -1,8 +1,12 @@
 import Router from 'koa-router'
-import { findPackage } from '../controllers/PackageController'
+import packageRouter from './PackageRouter'
 
 const apiRouter = new Router()
 
-apiRouter.get('/package/:name', findPackage)
+apiRouter.use(
+  '/packages',
+  packageRouter.routes(),
+  packageRouter.allowedMethods()
+)
 
 export default apiRouter

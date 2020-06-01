@@ -8,16 +8,15 @@ import helmet from 'koa-helmet'
 import logger from 'koa-logger'
 import compression from 'compression'
 import connect from 'koa-connect'
+import bodyParser from 'koa-bodyparser'
 
 import router from './routes'
-import defaultReturn from './middlewares/Next/defaultReturn'
-import { host, port, nodeEnv } from './config/variables'
+import { defaultReturn } from 'nextjs-koa-middleware'
+import { host, port, dev } from './config/variables'
 
 const app = new koa()
 
-const isProduction = nodeEnv === 'production'
-
-if (!isProduction) {
+if (dev) {
   app.use(logger())
 } else {
   app.use(connect(compression()))
@@ -28,6 +27,7 @@ app.use(defaultReturn())
 app.use(helmet())
 app.use(cors())
 app.use(favicon(`${__dirname}/../public/favicon.ico`))
+app.use(bodyParser())
 app.use(router.routes()).use(router.allowedMethods())
 
 app.listen(port)

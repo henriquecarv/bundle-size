@@ -1,10 +1,5 @@
-interface IVersion {
-  [key: string]: {
-    version: string
-  }
-}
-
+import { IVersions } from './IVersion'
 export default interface IPackage {
   name: string
-  versions: IVersion[]
+  versions: IVersions
 }
