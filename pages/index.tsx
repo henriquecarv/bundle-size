@@ -1,6 +1,6 @@
 // import Link from 'next/link'
-import Search from './search'
+import Search from './Search';
 
 export default function Home() {
-  return <Search />
+  return <Search />;
 }

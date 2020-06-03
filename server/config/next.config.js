@@ -1,3 +1,9 @@
-const withFonts = require('next-fonts')
+const withFonts = require('next-fonts');
 
-module.exports = withFonts()
+const { API_URL: apiUrl } = process.env;
+
+module.exports = withFonts({
+  publicRuntimeConfig: {
+    apiUrl,
+  },
+});
