@@ -1,28 +1,8 @@
 import css from 'styled-jsx/css';
 
 export const styles = css`
-  .Search {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    padding: 0 20px;
-  }
-  .Search__Container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    max-width: 100%;
-  }
   .Search__Title {
     font-size: 1.35rem;
-    font-weight: 200;
-    color: #777;
-    margin-top: 10px;
-    text-align: center;
-    line-height: 1.4;
-    letter-spacing: 1px;
   }
   .Search__Input-container {
     border: 1px solid rgba(0, 0, 0, 0.07);

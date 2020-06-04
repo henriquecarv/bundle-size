@@ -3,15 +3,13 @@ import { styles } from '../../styles/PackagePageStyles';
 import { GetServerSideProps, GetServerSidePropsContext } from 'next';
 import request from './../../helpers/request';
 import apiUrl from './../../config/api';
+import Chart from './../../components/Chart';
+import IVersionSize from '../../interfaces/IVersionSize';
+import Layout from './../../components/Layout';
 
 interface IPackageSizes {
   name: string;
-  versions: {
-    [key: string]: {
-      minified: number;
-      gzipped: number;
-    };
-  };
+  data: IVersionSize[];
 }
 
 export const getServerSideProps: GetServerSideProps = async ({
@@ -22,33 +20,19 @@ export const getServerSideProps: GetServerSideProps = async ({
     method: 'GET',
   });
 
-  return { props: { data } };
+  return { props: { ...data } };
 };
 
-interface IProps {
-  data: IPackageSizes;
-}
-
-function Package({ data }: IProps) {
+function Package({ name, data }: IPackageSizes) {
   return (
     <>
-      <div className="Package">{data.name}</div>
-      {data?.versions && (
-        <ul>
-          {Object.keys(data.versions).map((version, index) => {
-            const versionSizes = data.versions[version];
-            const { minified, gzipped } = versionSizes;
-            return (
-              <li key={index}>
-                <p>{version}</p>
-                <p>{minified}</p>
-                <p>{gzipped}</p>
-              </li>
-            );
-          })}
-        </ul>
-      )}
-      <style jsx>{styles}</style>
+      <Layout>
+        <div className="Package">
+          <h1 className="Package__Title">{name}</h1>
+          <Chart data={data} />
+        </div>
+        <style jsx>{styles}</style>
+      </Layout>
     </>
   );
 }

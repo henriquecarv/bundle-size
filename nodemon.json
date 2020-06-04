@@ -1,5 +1,5 @@
 {
-  "watch": ["server", "helpers"],
+  "watch": ["server", "helpers", "pages", "components", "styles", "interfaces"],
   "exec": "ts-node --project tsconfig.server.json server/index.ts",
-  "ext": "js,ts,json"
+  "ext": "js,ts,tsx,json"
 }

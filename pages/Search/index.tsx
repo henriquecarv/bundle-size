@@ -26,25 +26,23 @@ export default function Search() {
   return (
     <>
       <div className="Search">
-        <div className="Search__Container">
-          <h1 className="Search__Title">
-            Find the cost of adding a npm package to your bundle
-          </h1>
-          <div className="Search__Input-container">
-            <form className="Search__Input-form">
-              <div className="Input__Container">
-                <div className="Input__Container-inner">
-                  <input
-                    placeholder="find package"
-                    className="Input"
-                    value={searchInput}
-                    onChange={onChangeSearchInput}
-                    onKeyPress={onKeyPress}
-                  />
-                </div>
+        <h1 className="Search__Title">
+          Find the cost of adding a npm package to your bundle
+        </h1>
+        <div className="Search__Input-container">
+          <form className="Search__Input-form">
+            <div className="Input__Container">
+              <div className="Input__Container-inner">
+                <input
+                  placeholder="find package"
+                  className="Input"
+                  value={searchInput}
+                  onChange={onChangeSearchInput}
+                  onKeyPress={onKeyPress}
+                />
               </div>
-            </form>
-          </div>
+            </div>
+          </form>
         </div>
       </div>
 

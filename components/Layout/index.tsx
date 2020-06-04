@@ -8,7 +8,11 @@ interface IProps {
 export default function ({ children }: IProps) {
   return (
     <>
-      <div className="Layout">{children}</div>
+      <div className="Layout__Container">
+        <div className="Layout_Wrapper">
+          <div className="Layout">{children}</div>
+        </div>
+      </div>
       <style jsx>{styles}</style>
     </>
   );

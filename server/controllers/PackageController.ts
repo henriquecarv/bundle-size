@@ -20,9 +20,9 @@ export const getPackageVersionsSizes = async (ctx: Context) => {
   const displayableVersions = filterDisplayableVersions([
     ...lastThreeVersions,
     previousMajorVersion,
-  ]);
+  ]).reverse();
 
-  const versionsSizes = await getPackageSizes(name, displayableVersions);
+  const data = await getPackageSizes(name, displayableVersions);
 
-  ctx.body = { name, versions: versionsSizes };
+  ctx.body = { name, data };
 };

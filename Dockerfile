@@ -11,16 +11,19 @@ COPY yarn.lock ./
 
 RUN yarn install --frozen-lockfile
 
-COPY ./tsconfig*.json ./
-COPY ./.babelrc ./
-COPY ./*.d.ts ./
-COPY server ./server/
-COPY helpers ./helpers/
-COPY config ./config/
 COPY components ./components/
+COPY config ./config/
+COPY helpers ./helpers/
+COPY interfaces ./interfaces/
 COPY styles ./styles/
 COPY pages ./pages/
 COPY public ./public/
+COPY server ./server/
+
+COPY ./tsconfig*.json ./
+COPY ./.babelrc ./
+COPY ./*.d.ts ./
+
 
 ENV NEXT_TELEMETRY_DISABLED 1
 ENV NODE_ENV production

@@ -93,14 +93,12 @@ export const getPackageSizes = async (name: string, versions: string[]) => {
     return size.toFixed(1);
   });
 
-  const versionsSizes = {};
+  const data = versions.map((name, index) => {
+    const min = minifiedSizes[index];
+    const gzip = gzipSizes[index];
 
-  versions.forEach((version: string, index: number) => {
-    const key = `${version}`;
-    Object.assign(versionsSizes, {
-      [key]: { minified: minifiedSizes[index], gzipped: gzipSizes[index] },
-    });
+    return { name, min, gzip };
   });
 
-  return versionsSizes;
+  return data;
 };
