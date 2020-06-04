@@ -1,7 +1,7 @@
 export interface IVersion {
-  version: string
+  version: string;
 }
 
 export interface IVersions {
-  [key: string]: IVersion
+  [key: string]: IVersion;
 }

@@ -1,6 +1,6 @@
-import TerserPlugin from 'terser-webpack-plugin'
-import { cwd } from 'process'
-import { Configuration } from 'webpack'
+import TerserPlugin from 'terser-webpack-plugin';
+import { cwd } from 'process';
+import { Configuration } from 'webpack';
 
 export default (entry: string) => {
   return {
@@ -39,5 +39,5 @@ export default (entry: string) => {
         }),
       ],
     },
-  } as Configuration
-}
+  } as Configuration;
+};

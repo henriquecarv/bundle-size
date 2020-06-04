@@ -1,6 +1,11 @@
 // import Link from 'next/link'
 import Search from './Search';
+import Layout from './../components/Layout';
 
 export default function Home() {
-  return <Search />;
+  return (
+    <Layout>
+      <Search />
+    </Layout>
+  );
 }

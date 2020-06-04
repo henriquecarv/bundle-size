@@ -1,1 +1,1 @@
-declare module 'koa-connect'
+declare module 'koa-connect';

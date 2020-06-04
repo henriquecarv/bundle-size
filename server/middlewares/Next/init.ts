@@ -1,15 +1,15 @@
-import next from 'next'
-import { dev, nextClientDir } from './../../config/variables'
-import nextConfig from './../../config/next.config'
+import next from 'next';
+import { dev, nextClientDir } from './../../config/variables';
+import nextConfig from './../../config/next.config';
 
 export default () => {
-  const app = next({ dev, dir: nextClientDir, conf: nextConfig })
+  const app = next({ dev, dir: nextClientDir, conf: nextConfig });
 
   const init = async () => {
-    await app.prepare()
-  }
+    await app.prepare();
+  };
 
-  init()
+  init();
 
-  return app
-}
+  return app;
+};

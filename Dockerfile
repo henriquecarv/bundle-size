@@ -16,6 +16,9 @@ COPY ./.babelrc ./
 COPY ./*.d.ts ./
 COPY server ./server/
 COPY helpers ./helpers/
+COPY config ./config/
+COPY components ./components/
+COPY styles ./styles/
 COPY pages ./pages/
 COPY public ./public/
 
