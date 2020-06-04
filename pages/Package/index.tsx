@@ -6,6 +6,7 @@ import apiUrl from './../../config/api';
 import Chart from './../../components/Chart';
 import IVersionSize from '../../interfaces/IVersionSize';
 import Layout from './../../components/Layout';
+import PackageNoutFound from './../../components/PackageNotFound';
 
 interface IPackageSizes {
   name: string;
@@ -16,20 +17,31 @@ export const getServerSideProps: GetServerSideProps = async ({
   query,
 }: GetServerSidePropsContext) => {
   const { name } = query;
-  const data: IPackageSizes = await request(`${apiUrl}/packages/${name}`, {
-    method: 'GET',
-  });
 
-  return { props: { ...data } };
+  try {
+    const data: IPackageSizes = await request(`${apiUrl}/packages/${name}`, {
+      method: 'GET',
+    });
+
+    return { props: { ...data } };
+  } catch (error) {
+    return { props: { error } };
+  }
 };
 
-function Package({ name, data }: IPackageSizes) {
+interface IProps {
+  result: IPackageSizes;
+  error?: any;
+}
+
+function Package({ result: { data, name }, error }: IProps) {
   return (
     <>
       <Layout>
         <div className="Package">
           <h1 className="Package__Title">{name}</h1>
-          <Chart data={data} />
+          {!error && <Chart data={data} />}
+          {error && <PackageNoutFound />}
         </div>
         <style jsx>{styles}</style>
       </Layout>

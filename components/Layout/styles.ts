@@ -28,7 +28,8 @@ export const styles = css.global`
     align-items: center;
     max-width: 100%;
   }
-  h1 {
+  h1,
+  h2 {
     font-weight: 200;
     color: #777;
     margin-top: 10px;

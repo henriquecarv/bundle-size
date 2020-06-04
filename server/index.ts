@@ -15,6 +15,7 @@ import bodyParser from 'koa-bodyparser';
 
 import router from './routes';
 // import defaultReturn from './middlewares/Next/defaultReturn';
+import errorHandler from './middlewares/ErrorHandler/errorHandler';
 import { host, port, dev } from './config/variables';
 import nextConfig from './config/next.config';
 
@@ -50,8 +51,8 @@ app.prepare().then(() => {
   server.use(cors());
   server.use(favicon(`${__dirname}/../public/favicon.ico`));
   server.use(bodyParser());
+  server.use(errorHandler());
   server.use(router.routes()).use(router.allowedMethods());
-
   server.use(nextRouter.routes());
   server.listen(port);
 
