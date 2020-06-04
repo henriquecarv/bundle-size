@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search page matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="jsx-2704832905 Search"
+  >
+    <h1
+      class="jsx-2704832905 Search__Title"
+    >
+      Find the cost of adding a npm package to your bundle
+    </h1>
+    <div
+      class="jsx-2704832905 Search__Input-container"
+    >
+      <form
+        class="jsx-2704832905 Search__Input-form"
+      >
+        <div
+          class="jsx-2704832905 Input__Container"
+        >
+          <div
+            class="jsx-2704832905 Input__Container-inner"
+          >
+            <input
+              class="jsx-2704832905 Input"
+              placeholder="find package"
+              value=""
+            />
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <a
+    class="jsx-2704832905"
+    href="package/"
+  />
+</DocumentFragment>
+`;

@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PackageNotFound component matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="jsx-3984282531 PackageNotFound"
+  >
+    <h2
+      class="jsx-3984282531 PackageNotFound__Title"
+    >
+      Package not found
+    </h2>
+  </div>
+</DocumentFragment>
+`;

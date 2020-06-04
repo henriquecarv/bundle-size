@@ -28,6 +28,9 @@ jobs:
           name: typecheck
           command: yarn type-check
       - run:
+          name: test
+          command: yarn test
+      - run:
           name: build
           command: yarn build
 
