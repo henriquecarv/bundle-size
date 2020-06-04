@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 export default async (endpoint: string, config: RequestInit) => {
   const fetchConfig = {
     ...config,
@@ -18,7 +19,9 @@ export default async (endpoint: string, config: RequestInit) => {
   if (!result.ok) {
     const error = await response;
 
-    throw new Error(error);
+    const message = typeof error === 'object' ? error.error : error;
+
+    return { error: message };
   }
 
   return response;

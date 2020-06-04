@@ -11,6 +11,7 @@ import PackageNoutFound from './../../components/PackageNotFound';
 interface IPackageSizes {
   name: string;
   data: IVersionSize[];
+  error?: string;
 }
 
 export const getServerSideProps: GetServerSideProps = async ({
@@ -18,23 +19,14 @@ export const getServerSideProps: GetServerSideProps = async ({
 }: GetServerSidePropsContext) => {
   const { name } = query;
 
-  try {
-    const data: IPackageSizes = await request(`${apiUrl}/packages/${name}`, {
-      method: 'GET',
-    });
+  const data = await request(`${apiUrl}/packages/${name}`, {
+    method: 'GET',
+  });
 
-    return { props: { ...data } };
-  } catch (error) {
-    return { props: { error } };
-  }
+  return { props: { name, ...data } };
 };
 
-interface IProps {
-  result: IPackageSizes;
-  error?: any;
-}
-
-function Package({ result: { data, name }, error }: IProps) {
+function Package({ data, name, error }: IPackageSizes) {
   return (
     <>
       <Layout>
