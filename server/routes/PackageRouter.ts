@@ -1,12 +1,8 @@
 import Router from 'koa-router';
-import {
-  getPackageVersions,
-  getPackageSizes,
-} from '../controllers/PackageController';
+import { getPackageVersionsSizes } from '../controllers/PackageController';
 
 const packageRouter = new Router();
 
-packageRouter.get('/:name', getPackageVersions);
-packageRouter.post('/sizes/:name', getPackageSizes);
+packageRouter.get('/:name', getPackageVersionsSizes);
 
 export default packageRouter;

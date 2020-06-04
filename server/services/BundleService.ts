@@ -18,7 +18,7 @@ export const prepareInstallCommand = (name: string, version: string) => {
   return execPromise(mergedCommands);
 };
 
-export const preparePackageVersionStats = (
+const preparePackageVersionStats = (
   name: string,
   version: string
 ): Promise<Stats> => {
@@ -39,18 +39,11 @@ export const preparePackageVersionStats = (
   });
 };
 
-export const deletePath = (path: string) => {
-  return execPromise(`rm -rf ${path}`);
-};
-
-export const getGzipSizes = (path: string) => {
+const getGzipSizes = (path: string) => {
   return gzipSize(readFileSync(path, 'utf-8'));
 };
 
-export const getMinifiedSizes = (
-  versions: string[],
-  versionsStats: Stats[]
-) => {
+const getMinifiedSizes = (versions: string[], versionsStats: Stats[]) => {
   return versions.map((version: string, index: number) => {
     const stats = versionsStats[index];
     const { assets } = stats.toJson();
@@ -70,4 +63,44 @@ export const getMinifiedSizes = (
       prodFile,
     };
   });
+};
+
+export const getPackageSizes = async (name: string, versions: string[]) => {
+  const installations = versions.map((version: string) =>
+    prepareInstallCommand(name, version)
+  );
+  await Promise.all(installations);
+
+  const statsRun: Promise<Stats>[] = versions.map((version: string) =>
+    preparePackageVersionStats(name, version)
+  );
+
+  const versionsStats = await Promise.all(statsRun);
+
+  const sizes = getMinifiedSizes(versions, versionsStats);
+
+  const gzipRun = sizes.map(({ prodFile }) => getGzipSizes(prodFile));
+
+  const gzips = await Promise.all(gzipRun);
+
+  const gzipSizes = gzips.map((gzip) => {
+    const size = Number(gzip) / 1000;
+    return size.toFixed(1);
+  });
+
+  const minifiedSizes = sizes.map(({ minified }) => {
+    const size = Number(minified) / 1000;
+    return size.toFixed(1);
+  });
+
+  const versionsSizes = {};
+
+  versions.forEach((version: string, index: number) => {
+    const key = `${version}`;
+    Object.assign(versionsSizes, {
+      [key]: { minified: minifiedSizes[index], gzipped: gzipSizes[index] },
+    });
+  });
+
+  return versionsSizes;
 };

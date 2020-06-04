@@ -1,41 +1,53 @@
 /* eslint-disable no-console */
 import { styles } from '../../styles/PackagePageStyles';
-import {
-  InferGetServerSidePropsType,
-  GetServerSideProps,
-  GetServerSidePropsContext,
-} from 'next';
+import { GetServerSideProps, GetServerSidePropsContext } from 'next';
 import request from './../../helpers/request';
 import apiUrl from './../../config/api';
 
-interface IPackage {
+interface IPackageSizes {
   name: string;
-  versions: string[];
+  versions: {
+    [key: string]: {
+      minified: number;
+      gzipped: number;
+    };
+  };
 }
 
-// This gets called on every request
 export const getServerSideProps: GetServerSideProps = async ({
   query,
 }: GetServerSidePropsContext) => {
   const { name } = query;
-  const data: IPackage = await request(`${apiUrl}/packages/${name}`, {
+  const data: IPackageSizes = await request(`${apiUrl}/packages/${name}`, {
     method: 'GET',
   });
 
   return { props: { data } };
 };
 
-type IProps = InferGetServerSidePropsType<typeof getServerSideProps>;
+interface IProps {
+  data: IPackageSizes;
+}
 
 function Package({ data }: IProps) {
   return (
     <>
       <div className="Package">{data.name}</div>
-      <ul>
-        {data.versions.map((version: string, index: number) => {
-          return <li key={index}>{version}</li>;
-        })}
-      </ul>
+      {data?.versions && (
+        <ul>
+          {Object.keys(data.versions).map((version, index) => {
+            const versionSizes = data.versions[version];
+            const { minified, gzipped } = versionSizes;
+            return (
+              <li key={index}>
+                <p>{version}</p>
+                <p>{minified}</p>
+                <p>{gzipped}</p>
+              </li>
+            );
+          })}
+        </ul>
+      )}
       <style jsx>{styles}</style>
     </>
   );

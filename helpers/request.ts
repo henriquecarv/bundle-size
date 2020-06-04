@@ -1,6 +1,4 @@
-import { RequestOptions } from 'https';
-
-export default async (endpoint: string, config: RequestOptions) => {
+export default async (endpoint: string, config: RequestInit) => {
   const fetchConfig = {
     ...config,
     headers: {
@@ -18,7 +16,9 @@ export default async (endpoint: string, config: RequestOptions) => {
     : result.json();
 
   if (!result.ok) {
-    throw new Error(await response);
+    const error = await response;
+
+    throw new Error(error);
   }
 
   return response;
