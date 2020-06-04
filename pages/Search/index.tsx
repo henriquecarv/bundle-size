@@ -1,4 +1,4 @@
-import { styles } from '../../styles/SearchPageStyles';
+import { styles } from '../../client/styles/SearchPageStyles';
 import { useState, ChangeEvent, KeyboardEvent, useRef } from 'react';
 import Link from 'next/link';
 

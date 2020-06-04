@@ -1,12 +1,12 @@
 /* eslint-disable no-console */
-import { styles } from '../../styles/PackagePageStyles';
+import { styles } from '../../client/styles/PackagePageStyles';
 import { GetServerSideProps, GetServerSidePropsContext } from 'next';
 import request from './../../helpers/request';
 import apiUrl from './../../config/api';
-import Chart from './../../components/Chart';
-import IVersionSize from '../../interfaces/IVersionSize';
-import Layout from './../../components/Layout';
-import PackageNoutFound from './../../components/PackageNotFound';
+import Chart from '../../client/components/Chart';
+import IVersionSize from '../../client/interfaces/IVersionSize';
+import Layout from '../../client/components/Layout';
+import PackageNoutFound from '../../client/components/PackageNotFound';
 
 interface IPackageSizes {
   name: string;
