@@ -6,7 +6,7 @@ import apiUrl from '../../client/config/api';
 import Chart from '../../client/components/Chart';
 import IVersionSize from '../../client/interfaces/IVersionSize';
 import Layout from '../../client/components/Layout';
-import PackageNoutFound from '../../client/components/PackageNotFound';
+import PackageNotFound from '../../client/components/PackageNotFound';
 
 interface IPackageSizes {
   name: string;
@@ -29,11 +29,11 @@ export const getServerSideProps: GetServerSideProps = async ({
 function Package({ data, name, error }: IPackageSizes) {
   return (
     <>
-      <Layout>
+      <Layout title={name || 'Package not Found'}>
         <div className="Package">
           <h1 className="Package__Title">{name}</h1>
           {!error && <Chart data={data} />}
-          {error && <PackageNoutFound />}
+          {error && <PackageNotFound />}
         </div>
         <style jsx>{styles}</style>
       </Layout>

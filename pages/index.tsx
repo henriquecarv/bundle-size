@@ -4,7 +4,7 @@ import Layout from '../client/components/Layout';
 
 export default function Home() {
   return (
-    <Layout>
+    <Layout title="Search">
       <Search />
     </Layout>
   );

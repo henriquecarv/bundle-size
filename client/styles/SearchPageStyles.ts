@@ -44,4 +44,18 @@ export const styles = css`
     box-sizing: border-box;
     letter-spacing: -0.7px;
   }
+  .Input__Error {
+    border: 1px solid red;
+  }
+  .Input__Search-icon {
+    position: absolute;
+    right: 25px;
+    z-index: 1;
+    cursor: pointer;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 25px;
+    height: 25px;
+  }
 `;
