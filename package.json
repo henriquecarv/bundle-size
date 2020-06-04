@@ -1,5 +1,6 @@
 {
   "name": "bundle-size",
+  "description": "Find the cost of adding a npm package to your bundle",
   "version": "1.0.0",
   "scripts": {
     "dev": "nodemon",
@@ -12,7 +13,7 @@
     "type-check": "tsc --pretty --noEmit",
     "format": "prettier --write **/*.{js,ts,tsx}",
     "lint": "eslint . --ext ts --ext tsx --ext js",
-    "test": "jest",
+    "env": "[ -f .env ] || cp .env.example .env",
     "docker:start": "docker-compose up -d",
     "docker:stop": "docker-compose down -v --remove-orphans --rmi local"
   },
@@ -40,7 +41,6 @@
     "koa-router": "^8.0.8",
     "next": "^9.4.4",
     "next-fonts": "^1.1.0",
-    "nextjs-koa-middleware": "^1.0.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "recharts": "^1.8.5",
@@ -61,7 +61,7 @@
     "@types/koa-logger": "^3.1.1",
     "@types/koa-router": "^7.4.1",
     "@types/koa__cors": "^3.0.1",
-    "@types/node": "^14.0.10",
+    "@types/node": "^14.0.11",
     "@types/react": "^16.9.35",
     "@types/react-dom": "16.9.8",
     "@types/recharts": "^1.8.10",
@@ -83,6 +83,6 @@
     "npm-run-all": "^4.1.5",
     "prettier": "^2.0.5",
     "ts-node": "^8.10.2",
-    "typescript": "^3.9.3"
+    "typescript": "^3.9.5"
   }
 }

@@ -2,7 +2,7 @@
 import { styles } from '../../client/styles/PackagePageStyles';
 import { GetServerSideProps, GetServerSidePropsContext } from 'next';
 import request from './../../helpers/request';
-import apiUrl from './../../config/api';
+import apiUrl from '../../client/config/api';
 import Chart from '../../client/components/Chart';
 import IVersionSize from '../../client/interfaces/IVersionSize';
 import Layout from '../../client/components/Layout';
