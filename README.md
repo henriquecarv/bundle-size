@@ -1,5 +1,6 @@
 # bundle-size
 
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/e48a66aed7824ca5a8cd63fdfb3ccb6f)](https://www.codacy.com/manual/henriquecarv/bundle-size?utm_source=github.com&utm_medium=referral&utm_content=henriquecarv/bundle-size&utm_campaign=Badge_Grade)
 [![CircleCI](https://img.shields.io/circleci/build/github/henriquecarv/bundle-size?token=21f1fb4f1ba927d177a254bf8030295e7ffa3bae)](https://circleci.com/gh/henriquecarv/bundle-size)
 [![LICENSE](https://img.shields.io/github/license/henriquecarv/bundle-size.svg)](./LICENSE)
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=henriquecarv/bundle-size)](https://dependabot.com)
