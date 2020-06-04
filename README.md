@@ -1,5 +1,6 @@
 # bundle-size
 
+[![CircleCI](https://img.shields.io/circleci/build/github/henriquecarv/bundle-size?token=21f1fb4f1ba927d177a254bf8030295e7ffa3bae)](https://circleci.com/gh/henriquecarv/bundle-size)
 [![LICENSE](https://img.shields.io/github/license/henriquecarv/bundle-size.svg)](./LICENSE)
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=henriquecarv/bundle-size)](https://dependabot.com)
 
