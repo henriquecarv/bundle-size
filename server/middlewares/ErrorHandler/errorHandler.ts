@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { Context, Next } from 'koa';
 
 export default () => async (ctx: Context, next: Next) => {

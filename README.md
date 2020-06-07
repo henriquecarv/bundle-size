@@ -40,7 +40,6 @@
 - [ ] Add more automated tests and test coverage report
 - [ ] Include search field in the Package page to continue searching for other packages from there
 - [ ] Add database instance to be able to reuse the already searched and built package versions
-- [ ] Refactor nextjs server methods to a `nextjs-koa-middleware`
 
 ### License
 

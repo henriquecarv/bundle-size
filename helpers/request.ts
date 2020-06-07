@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 export default async (endpoint: string, config: RequestInit) => {
   const fetchConfig = {
     ...config,

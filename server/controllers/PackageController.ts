@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { Context } from 'koa';
 import { getPackage } from './../services/PackageService';
 import getThreeLastVersions from './../utils/getThreeLastVersions';

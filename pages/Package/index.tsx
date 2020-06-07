@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { styles } from '../../client/styles/PackagePageStyles';
 import { GetServerSideProps, GetServerSidePropsContext } from 'next';
 import request from './../../helpers/request';

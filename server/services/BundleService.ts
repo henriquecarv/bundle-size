@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { cwd } from 'process';
 import webpack, { Stats } from 'webpack';
 import prepareWebPackConfig from './../utils/prepareWebPackConfig';
