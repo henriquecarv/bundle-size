@@ -1,15 +1,19 @@
 import { BarChart, Bar, XAxis, Tooltip, Legend } from 'recharts';
 import IVersionSize from '../../interfaces/IVersionSize';
 import { styles } from './styles';
+import { useWindowWidth } from '@react-hook/window-size';
 
 interface IProps {
   data: IVersionSize[];
 }
 
 export default function ({ data }: IProps) {
+  const windowWidth = useWindowWidth();
+  const chartWidth = windowWidth < 768 ? 250 : 500;
+
   return (
     <>
-      <BarChart width={500} height={300} data={data}>
+      <BarChart width={chartWidth} height={300} data={data}>
         <XAxis dataKey="name" />
         <Tooltip />
         <Legend />

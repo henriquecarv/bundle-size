@@ -10,7 +10,7 @@ export const styles = css`
     background: transparent;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
     max-width: 700px;
-    min-width: 550px;
+    min-width: 250px;
   }
   .Search__Input-form {
     width: 100%;
