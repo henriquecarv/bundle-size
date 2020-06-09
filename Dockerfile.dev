@@ -1,0 +1,28 @@
+FROM node:lts-alpine
+
+WORKDIR /app
+
+COPY package.json ./
+COPY yarn.lock ./
+
+RUN yarn install --frozen-lockfile
+
+COPY client ./client/
+COPY helpers ./helpers/
+COPY pages ./pages/
+COPY public ./public/
+COPY server ./server/
+COPY nodemon.json ./
+COPY tsconfig*.json ./
+COPY .babelrc ./
+COPY *.d.ts ./
+
+ENV NEXT_TELEMETRY_DISABLED 1
+
+EXPOSE 3000
+
+CMD ["yarn", "dev"]
+
+
+
+

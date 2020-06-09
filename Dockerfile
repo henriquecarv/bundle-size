@@ -12,7 +12,6 @@ COPY yarn.lock ./
 RUN yarn install --frozen-lockfile
 
 COPY client ./client/
-COPY config ./config/
 COPY helpers ./helpers/
 COPY pages ./pages/
 COPY public ./public/

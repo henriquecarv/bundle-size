@@ -2,6 +2,7 @@ import { BarChart, Bar, XAxis, Tooltip, Legend } from 'recharts';
 import IVersionSize from '../../interfaces/IVersionSize';
 import { styles } from './styles';
 import { useWindowWidth } from '@react-hook/window-size';
+import { useState, useEffect } from 'react';
 
 interface IProps {
   data: IVersionSize[];
@@ -9,11 +10,17 @@ interface IProps {
 
 export default function ({ data }: IProps) {
   const windowWidth = useWindowWidth();
-  const chartWidth = windowWidth < 768 ? 250 : 500;
+  const [width, setWidth] = useState(500);
+
+  useEffect(() => {
+    const chartWidth = windowWidth < 768 ? 250 : 500;
+
+    setWidth(chartWidth);
+  }, [windowWidth]);
 
   return (
     <>
-      <BarChart width={chartWidth} height={300} data={data}>
+      <BarChart width={width} height={300} data={data}>
         <XAxis dataKey="name" />
         <Tooltip />
         <Legend />
