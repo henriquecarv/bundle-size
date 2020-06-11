@@ -1,4 +1,4 @@
-version: "3"
+version: '3'
 
 services:
   bundle_app:
@@ -7,6 +7,8 @@ services:
     container_name: bundle_app
     restart: unless-stopped
     env_file: ./.env
+    environment:
+      NEXT_CONFIG_PATH: dist/server/config/next.config.js
     ports:
       - ${PORT}:${PORT}
     expose:

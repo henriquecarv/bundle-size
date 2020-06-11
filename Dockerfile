@@ -11,11 +11,11 @@ COPY yarn.lock ./
 
 RUN yarn install --frozen-lockfile
 
-COPY client ./client/
-COPY helpers ./helpers/
-COPY pages ./pages/
-COPY public ./public/
-COPY server ./server/
+COPY client ./client
+COPY helpers ./helpers
+COPY pages ./pages
+COPY public ./public
+COPY server ./server
 
 COPY ./tsconfig*.json ./
 COPY ./.babelrc ./
@@ -44,7 +44,8 @@ RUN yarn install --prod --frozen-lockfile
 
 COPY --from=build /app/dist ./dist
 COPY --from=build /app/.next ./.next
-COPY --from=build /app/public ./public
+COPY public ./public
+COPY server/config/next.config.js ./dist/server/config/next.config.js
 
 COPY entrypoint.sh ./
 RUN chmod +x ./entrypoint.sh
