@@ -48,12 +48,12 @@
     "react-dom": "^16.13.1",
     "recharts": "^1.8.5",
     "semver-diff": "^3.1.1",
-    "terser-webpack-plugin": "^3.0.5",
+    "terser-webpack-plugin": "^3.0.6",
     "to-semver": "^3.0.0",
     "webpack": "^4.43.0"
   },
   "devDependencies": {
-    "@testing-library/react": "^10.2.1",
+    "@testing-library/react": "^10.3.0",
     "@types/compression": "^1.7.0",
     "@types/jest": "^26.0.0",
     "@types/koa": "^2.11.3",
@@ -63,7 +63,7 @@
     "@types/koa-router": "^7.4.1",
     "@types/koa__cors": "^3.0.1",
     "@types/node": "^14.0.13",
-    "@types/react": "^16.9.37",
+    "@types/react": "^16.9.38",
     "@types/react-dom": "16.9.8",
     "@types/recharts": "^1.8.12",
     "@types/styled-jsx": "^2.2.8",
