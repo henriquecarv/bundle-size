@@ -2,6 +2,7 @@
   "name": "bundle-size",
   "description": "Find the cost of adding a npm package to your bundle",
   "version": "1.0.0",
+  "main": "dist/server/index.js",
   "scripts": {
     "dev": "nodemon",
     "prebuild": "rm -rf .next/ dist/",
@@ -9,7 +10,7 @@
     "build:next": "dotenv next build",
     "build:server": "tsc --project tsconfig.server.json",
     "postbuild": "cp -r public/ dist/public/",
-    "start": "cross-env NODE_ENV=production node dist/server/index.js",
+    "start": "cross-env NODE_ENV=production node .",
     "type-check": "tsc --pretty --noEmit",
     "format": "prettier --write **/*.{js,ts,tsx}",
     "lint": "eslint . --ext ts --ext tsx --ext js",

@@ -47,12 +47,12 @@ COPY --from=build /app/.next ./.next
 COPY public ./public
 COPY server/config/next.config.js ./dist/server/config/next.config.js
 
-COPY entrypoint.sh ./
-RUN chmod +x ./entrypoint.sh
+RUN npm install pm2 -g
+COPY ecosystem.config.js ./
 
 EXPOSE 3000
 
-ENTRYPOINT [ "./entrypoint.sh" ]
+CMD ["pm2-runtime", "ecosystem.config.js"]
 
 
 
