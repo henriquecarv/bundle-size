@@ -6166,7 +6166,7 @@ koa-router@^8.0.8:
     path-to-regexp "1.x"
     urijs "^1.19.2"
 
-koa@^2.12.1, koa@^2.13.0:
+koa@^2.13.0:
   version "2.13.0"
   resolved "https://registry.yarnpkg.com/koa/-/koa-2.13.0.tgz#25217e05efd3358a7e5ddec00f0a380c9b71b501"
   integrity sha512-i/XJVOfPw7npbMv67+bOeXr3gPqOAw6uh5wFyNs3QvJ47tUx3M3V9rIE0//WytY42MKz4l/MXKyGkQ2LQTfLUQ==
@@ -6828,12 +6828,12 @@ next@^9.4.4:
     webpack "4.43.0"
     webpack-sources "1.4.3"
 
-nextjs-koa-middleware@^2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/nextjs-koa-middleware/-/nextjs-koa-middleware-2.1.1.tgz#e805ec6b63a54a81b9ba69e515a84b867013a218"
-  integrity sha512-/hTe1XeE4MsgxjRnOIUEJvpbbYG3vBQ4kc+A1MmePh6LkASNA+rmYA9cj8ekY4YD9HVl+u8+ni2EIb/CyKz5bQ==
+nextjs-koa-middleware@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/nextjs-koa-middleware/-/nextjs-koa-middleware-2.2.0.tgz#ccb50b7d3d44ba8f778fe0426ff797dde6a37790"
+  integrity sha512-fVmxTDlbZ4pcgvVjqP/nFWMrsvrO71eNOEpfcyyrqvoCK9lBqe3jkOStIAlmc9inkFjFFC20tEeNL2h9Q5pDQQ==
   dependencies:
-    koa "^2.12.1"
+    koa "^2.13.0"
     next "^9.4.4"
 
 nice-try@^1.0.4:
