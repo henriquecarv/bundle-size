@@ -44,7 +44,7 @@
     "koa-router": "^8.0.8",
     "next": "^9.4.4",
     "next-fonts": "^1.2.0",
-    "nextjs-koa-middleware": "^2.1.1",
+    "nextjs-koa-middleware": "^2.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "recharts": "^1.8.5",
