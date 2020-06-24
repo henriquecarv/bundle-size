@@ -5,19 +5,9 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile.dev
-    container_name: bundle_app
-    restart: unless-stopped
-    env_file: ./.env
+    container_name: bundle_app_dev
+    environment:
+      NEXT_CONFIG_PATH: server/config/next.config.js
     volumes:
       - ./:/app
       - /app/node_modules
-    ports:
-      - ${PORT}:${PORT}
-    expose:
-      - ${PORT}
-    networks:
-      - bundle_net
-
-networks:
-  bundle_net:
-    driver: bridge

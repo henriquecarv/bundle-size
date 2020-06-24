@@ -11,11 +11,3 @@ services:
       NEXT_CONFIG_PATH: dist/server/config/next.config.js
     ports:
       - ${PORT}:${PORT}
-    expose:
-      - ${PORT}
-    networks:
-      - bundle_net
-
-networks:
-  bundle_net:
-    driver: bridge
