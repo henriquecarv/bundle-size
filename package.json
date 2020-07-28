@@ -49,7 +49,7 @@
     "react-dom": "^16.13.1",
     "recharts": "^1.8.5",
     "semver-diff": "^3.1.1",
-    "terser-webpack-plugin": "^3.0.6",
+    "terser-webpack-plugin": "^3.0.8",
     "to-semver": "^3.0.0",
     "webpack": "^4.43.0"
   },
