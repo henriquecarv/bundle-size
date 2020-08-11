@@ -42,7 +42,7 @@
     "koa-helmet": "^5.2.0",
     "koa-logger": "^3.2.1",
     "koa-router": "^8.0.8",
-    "next": "^9.4.4",
+    "next": "^9.5.2",
     "next-fonts": "^1.2.0",
     "nextjs-koa-middleware": "^2.2.0",
     "react": "^16.13.1",
