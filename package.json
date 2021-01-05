@@ -36,7 +36,7 @@
     "cross-env": "^7.0.2",
     "dotenv": "^8.2.0",
     "gzip-size": "^5.1.1",
-    "koa": "^2.13.0",
+    "koa": "^2.13.1",
     "koa-connect": "^2.1.0",
     "koa-favicon": "^2.1.0",
     "koa-helmet": "^5.2.0",
