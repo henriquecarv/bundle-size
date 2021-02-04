@@ -54,7 +54,7 @@
     "webpack": "^4.43.0"
   },
   "devDependencies": {
-    "@testing-library/react": "^10.4.3",
+    "@testing-library/react": "^11.2.5",
     "@types/compression": "^1.7.0",
     "@types/jest": "^26.0.3",
     "@types/koa": "^2.11.3",
