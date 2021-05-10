@@ -34,7 +34,7 @@
     "@react-hook/window-size": "^3.0.6",
     "compression": "^1.7.4",
     "cross-env": "^7.0.2",
-    "dotenv": "^8.2.0",
+    "dotenv": "^9.0.1",
     "gzip-size": "^5.1.1",
     "koa": "^2.13.0",
     "koa-connect": "^2.1.0",
